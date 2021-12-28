@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import { signOut } from "../../actions/authActions";
 import { connect } from "react-redux";
 
-const NavItems = ({ signOut, uid }) => {
+const NavItems = ({ signOut, uid, draw }) => {
     if (uid) {
         return (
-            <Link to="/signin" className="nav-link" onClick={signOut}>
-                Sign Out
-            </Link>
+            <>
+                <Link to="/signin" className="nav-link" onClick={signOut}>
+                    Sign Out
+                </Link>
+                <Link to="/draw" className="nav-link" onClick={draw}>
+                    Draw
+                </Link>
+            </>
         );
     } else {
         return (
